@@ -1,0 +1,26 @@
+{
+  "name": "wdi_project1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jevangelista/wdi_project1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jevangelista/wdi_project1/issues"
+  },
+  "homepage": "https://github.com/jevangelista/wdi_project1#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "bower": "^1.5.2",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.5",
+    "underscore": "^1.8.3"
+  }
+}
