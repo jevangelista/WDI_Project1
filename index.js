@@ -1,6 +1,6 @@
+// <<<<<<<<<<< REQUIREMENTS >>>>>>>>>>>>>>
 //========================================
-// <<<<<<<<<<< requirements >>>>>>>>>>>>>>
-//========================================
+
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'), 
@@ -13,8 +13,7 @@ var express = require('express'),
 	//requires express-session
 	session = require("express-session");
 
-//========================================
-// <<<<<<<<<<<<<< config >>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<< CONFIG >>>>>>>>>>>>>>>>>
 //========================================
 //serve js & css files
 app.use("/static", express.static("public"));
@@ -23,8 +22,7 @@ app.use("/vendor", express.static("bower_components"));
 //body parser config to accept all datatypes
 app.use(bodyParser.urlencoded({extended: true}));
 
-//=======================================
-// <<<<<<<<<< create session >>>>>>>>>>>>
+// <<<<<<<<<< CREATE SESSION >>>>>>>>>>>>
 //========================================
 
 app.use(
@@ -67,13 +65,12 @@ app.get("/profile", function userShow(req, res) {
   })
 });
 
-//========================================
-// <<<<<<<<<<<< get routes >>>>>>>>>>>>>>>
+// <<<<<<<<<<<< GET ROUTES >>>>>>>>>>>>>>>
 //========================================
 
 //home route
-app.get("/", function (req, res) {
-	res.send("Hello world!");
+app.get("/home", function (req, res) {
+  res.sendFile(path.join(views, "home.html"));
 });
 
 //login route
@@ -97,12 +94,11 @@ app.get("/profile", function (req, res) {
 });
 
 //recipe route
-app.get("/profile", function (req, res) {
+app.get("/recipe", function (req, res) {
   res.sendFile(path.join(views, "recipe.html"));
 });
 
-//========================================
-// <<<<<<<<<<<< API endpoints >>>>>>>>>>>>
+// <<<<<<<<<<<< API ENDPOINTS >>>>>>>>>>>>
 //========================================
 
 //where the user submits the sign-up form
@@ -136,7 +132,9 @@ app.post(["/sessions", "/login"], function login(req, res) {
 
 
 
-//SPECIFYING PORT
+
+// <<<<<<<<<<<< SPECIFYING PORT >>>>>>>>>>>>
+//========================================
 var listener = app.listen(3000, function() {
 	console.log("Listening on port "+ listener.address().port);
 });
