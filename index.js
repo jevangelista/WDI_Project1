@@ -2,16 +2,16 @@
 //========================================
 
 var express = require('express'),
-	app = express(),
-	bodyParser = require('body-parser'), 
-	_ = require("underscore"),
-	path = require("path"),
-	// views path
-	views = path.join(process.cwd(), "views/"),
-	//require db models
-	db = require("./models"),
-	//requires express-session
-	session = require("express-session");
+  app = express(),
+  bodyParser = require('body-parser'), 
+  _ = require("underscore"),
+  path = require("path"),
+  // views path
+  views = path.join(process.cwd(), "views/"),
+  //require db models
+  db = require("./models"),
+  //requires express-session
+  session = require("express-session");
 
 // <<<<<<<<<<<<<< CONFIG >>>>>>>>>>>>>>>>>
 //========================================
@@ -26,11 +26,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 //========================================
 
 app.use(
-	session({
-		secret: 'super-secret-private-keyyy',
-		resave: false,
-		saveUninitialized: true
-	})
+  session({
+    secret: 'super-secret-private-keyyy',
+    resave: false,
+    saveUninitialized: true
+  })
 
 );
 
@@ -58,12 +58,6 @@ app.use(function (req, res, next) {
   next(); 
 });
 
-// show the current user
-app.get("/profile", function userShow(req, res) {
-  req.currentUser(function (err, user) {
-    res.send("Hello " + user.email);
-  })
-});
 
 // <<<<<<<<<<<< GET ROUTES >>>>>>>>>>>>>>>
 //========================================
@@ -83,9 +77,11 @@ app.get("/signup", function (req, res) {
   res.sendFile(path.join(views, "signup.html"));
 });
 
-//profile route
-app.get("/profile", function (req, res) {
-  res.sendFile(path.join(views, "profile.html"));
+// show the current user
+app.get("/profile", function userShow(req, res) {
+  req.currentUser(function (err, user) {
+    res.sendFile(path.join(views, "profile.html"));
+  })
 });
 
 //bar route
@@ -103,16 +99,23 @@ app.get("/recipe", function (req, res) {
 
 //where the user submits the sign-up form
 app.post(["/users", "/signup"], function signup(req, res) {
-	console.log("Looks like you're trying to signup!");
-	//grab the user from the params
-	var user = req.body.user;
-	//pull out their email & password
-	var email = user.email;
-	var password = user.password;
-	//create the new user
-	db.User.createSecure(email,password, function() {
-		res.send(email + " is registered!\n");
-	});
+  console.log("Looks like you're trying to signup!");
+  //grab the user from the params
+  var user = req.body.user;
+  //pull out their email & password
+  var email = user.email;
+  var password = user.password;
+  //create the new user
+  db.User.createSecure(email,password, function (err, user) {
+    if (err) {console.log(err);
+    } else { 
+    // login the user
+    req.login(user);
+    console.log("User is logged in");
+    // redirect to user profile
+    res.redirect("/profile"); 
+  };
+  });
 });
 
 // where the user submits the login form
@@ -121,11 +124,14 @@ app.post(["/sessions", "/login"], function login(req, res) {
   var email = user.email;
   var password = user.password;
   db.User.authenticate(email, password, function (err, user) {
+    if (err) {console.log(err);
+    } else {
     // login the user
     req.login(user);
     console.log("User is logged in");
     // redirect to user profile
     res.redirect("/profile"); 
+    };
   });
 });
 
@@ -136,5 +142,5 @@ app.post(["/sessions", "/login"], function login(req, res) {
 // <<<<<<<<<<<< SPECIFYING PORT >>>>>>>>>>>>
 //========================================
 var listener = app.listen(3000, function() {
-	console.log("Listening on port "+ listener.address().port);
+  console.log("Listening on port "+ listener.address().port);
 });

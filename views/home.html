@@ -14,8 +14,8 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
 	<!-- Main CSS -->
-	<link rel="stylesheet" type="text/css" href="/static/main.css">
-	<script src="/static/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<script src="/static/js/app.js"></script>
 </head>
 
 <body>
@@ -23,10 +23,11 @@
 	<header class="page-header">
 		<h1>Bartend.Me</h1>
 	</header>
+		<h2>Say hello to your new personal bartender!</h2>
 
 	<!--image -->
 	
-	<table>
+	<table id="big-drinks-img">
 		<tr>
 			<td>
 				<div class="row">
@@ -43,7 +44,7 @@
 
     <!-- Sign up Button -->
     <div>
-     <button id="signButton" action="/signup">Sign Up</button>
+     <button type="button" class="btn btn-default" id="signButton" action="/signup">Sign Up</button>
      <script type="text/javascript">
         document.getElementById("signButton").onclick = function () {
             location.href = "/signup";
@@ -54,7 +55,7 @@
     <br/>
     <!-- Log In Button-->
     <div>
-     <button id="logButton" action="/login">Login</button>
+     <button type="button" class="btn btn-default" id="logButton" action="/login">Login</button>
      <script type="text/javascript">
         document.getElementById("logButton").onclick = function () {
             location.href = "/login";
