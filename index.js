@@ -63,6 +63,11 @@ app.use(function (req, res, next) {
 //========================================
 
 //home route
+app.get("/", function (req, res) {
+  res.sendFile(path.join(views, "home.html"));
+});
+
+//home route
 app.get("/home", function (req, res) {
   res.sendFile(path.join(views, "home.html"));
 });
@@ -77,7 +82,14 @@ app.get("/signup", function (req, res) {
   res.sendFile(path.join(views, "signup.html"));
 });
 
-// show the current user
+//logout route
+app.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/home"); 
+  console.log("User is logged out!");
+});
+
+// show the current user/profile route
 app.get("/profile", function userShow(req, res) {
   req.currentUser(function (err, user) {
     res.sendFile(path.join(views, "profile.html"));
@@ -85,7 +97,7 @@ app.get("/profile", function userShow(req, res) {
 });
 
 //bar route
-app.get("/profile", function (req, res) {
+app.get("/bar", function (req, res) {
   res.sendFile(path.join(views, "bar.html"));
 });
 
@@ -135,6 +147,31 @@ app.post(["/sessions", "/login"], function login(req, res) {
   });
 });
 
+//***TESTING OUT DATA****
+app.get("/api/users", function indexUsers(req, res){
+    db.User.find({}, function(err, users){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(users);
+    });
+
+});
+
+// app.get("/api/users:id", function showUser(req, res){
+//   var tweets = [
+//       { message: "Once you understand how to write a program get someone else to write it." },
+//       { message: "The string is a stark data structure and everywhere it is passed there is much duplication of process. It is a perfect vehicle for hiding information." },
+//       { message: "There are two ways to write error-free programs; only the third one works." }
+//     ];
+
+//   var userNum = req.params.id; //tweets.message[1];
+
+//   res.send({
+//      data: [ users[userNum] ] // note we're sending back an array of one.
+//   });
+// })
 
 
 

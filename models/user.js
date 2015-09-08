@@ -5,6 +5,7 @@ bcrypt = require('bcrypt');
 //User Schema
 var UserSchema = new Schema({
 	email: {type: String, required: true},
+  image: {type: String, required: true},
 	passwordDigest: {type: String, required: true},
 	createdAt: {type: Date, default: Date.now()}
 });
@@ -24,7 +25,7 @@ UserSchema.statics.createSecure = function (email, password, cb) {
       };
       // create a new user in the db with hashed password and execute the callback when done
       _this.create(user, cb);
-    
+
     });
   });
 };

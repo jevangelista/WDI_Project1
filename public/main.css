@@ -10,3 +10,13 @@ h1 {
 h2 {
 	color: #EAD3A8;
 }
+
+p {
+	color: #EAD3A8;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
