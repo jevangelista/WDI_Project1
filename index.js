@@ -47,6 +47,7 @@ app.use(function (req, res, next) {
       function (err, user) {
         req.user = user;
         cb(null, user);
+
       })
   };
   // logout the current user
@@ -90,9 +91,17 @@ app.get("/logout", function (req, res) {
 });
 
 // show the current user/profile route
-app.get("/profile", function userShow(req, res) {
+app.get("/profile/", function userShow(req, res) {
   req.currentUser(function (err, user) {
+
+    console.log("Hey look! this is " + user);
+    console.log("Hey this is their session id: " + req.session.userId)
+
+    if (err || user === null) {
+      return console.log(err);
+    } else {
     res.sendFile(path.join(views, "profile.html"));
+    };
   })
 });
 
@@ -145,12 +154,12 @@ app.post(["/sessions", "/login"], function login(req, res) {
     req.login(user);
     console.log("User is logged in");
     // redirect to user profile
-    res.redirect("/profile"); 
+    res.redirect("/profile/"); 
     };
   });
 });
 
-//***TESTING OUT DATA****
+//gets all user data
 app.get("/api/users", function indexUsers(req, res){
     db.User.find({}, function(err, users){
         if (err) {
@@ -162,20 +171,15 @@ app.get("/api/users", function indexUsers(req, res){
 
 });
 
-// app.get("/api/users:id", function showUser(req, res){
-//   var tweets = [
-//       { message: "Once you understand how to write a program get someone else to write it." },
-//       { message: "The string is a stark data structure and everywhere it is passed there is much duplication of process. It is a perfect vehicle for hiding information." },
-//       { message: "There are two ways to write error-free programs; only the third one works." }
-//     ];
+//trying to get individual JSON with currentUser 
+app.get("/api/user/:id", function showUser(req, res){
+  req.currentUser(function(err,user){
+    if (err) {return console.log(err);}
+    res.send(user);
 
-//   var userNum = req.params.id; //tweets.message[1];
+  })
 
-//   res.send({
-//      data: [ users[userNum] ] // note we're sending back an array of one.
-//   });
-// })
-
+});
 
 
 

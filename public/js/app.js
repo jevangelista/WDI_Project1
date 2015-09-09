@@ -8,9 +8,12 @@ function render(items) {
   })
 }
 
- $.get("/api/users", function (response) {
+ $.get("/api/user/55ef2d2c483f5cf4208e86f0", function (response) {
     render(response);
  });
 
+ //  $.get("/api/user/beau@ga.co", function (response) {
+ //    render(response);
+ // });
 
 })
