@@ -19,42 +19,57 @@
 </head>
 
 <body>
-<div id="page-wrapper" class="container">
-	<header class="page-header">
-		<h1>Bartend.Me</h1>
-	</header>
-		<h2>Say hello to your new personal bartender!</h2>
+
+<!-- Header and login -->
+<nav class="navbar" role="navigation">
+	<div class="container-fluid accent">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+				<span class="title">
+					<a id="title-link" href="/">Bartend.Me</a>
+				</span>
+
+						<span class="navbar-right">
+						<div class="login-nav">
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><button type="button" class="btn glyphicon glyphicon-glass"></button></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="home">Home</a></li>
+				            <li><a href="signup">Sign Up</a></li>
+				            <li><a href="login">Login</a></li>
+				          </ul>
+				        </li>
+						</div>
+						</span>
+
+						
+
+			<div>
+		</div>
+	</div>
+</nav>
+<!-- End Header and login -->
 
 	<!--image -->
 	
-	<table id="big-drinks-img">
-		<tr>
-			<td>
-				<div class="row">
-     			<div class="span12">
-				<img width="1100" src="static/images/drinks-27.png" >
-				</div>
-				</div>
-			</td>
-		</tr>
-	</table>
-	
+	<div class="home-img">
+		<img src="static/images/drinks-27.png">
+	</div>
 
-<br/><br/>
+<h2>Say hello to your new personal bartender!</h2>
+
+<br/>
 
     <!-- Sign up Button -->
-    <div>
+    <div class="home-btn">
      <button type="button" class="btn btn-default" id="signButton" action="/signup">Sign Up</button>
      <script type="text/javascript">
         document.getElementById("signButton").onclick = function () {
             location.href = "/signup";
         };
     </script>
-    </div>
 
-    <br/>
-    <!-- Log In Button-->
-    <div>
      <button type="button" class="btn btn-default" id="logButton" action="/login">Login</button>
      <script type="text/javascript">
         document.getElementById("logButton").onclick = function () {
@@ -63,7 +78,13 @@
     </script>
     </div>
 
-</div>
+
+    <!-- Log In Button-->
+    <div>
+ 
+    </div>
+
+
 </body>
 
 </html>

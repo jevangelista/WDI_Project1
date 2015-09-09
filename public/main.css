@@ -3,15 +3,12 @@ body {
 	text-align: center;
 }
 
-h1 {
-	color: #EAD3A8;
+div.home-img {
+  background: url('images/drinks-27.png');
+  width: 100%;
 }
 
-h2 {
-	color: #EAD3A8;
-}
-
-p {
+h1, h2, p {
 	color: #EAD3A8;
 }
 

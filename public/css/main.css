@@ -1,8 +1,49 @@
 body {
 	background-color: #64533f;
 	text-align: center;
+	font-family: georgia;
 }
 
 h1 {
 	color: #EAD3A8;
+	text-decoration: none;
+}
+
+.accent {
+	border: 3px solid;
+	border-color: #EAD3A8;
+	background-color: #4A0000;
+	padding: 20px;
+
+}
+
+.title {
+    font-size: 50px;
+}
+
+#title-link {
+	color: #EAD3A8;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+}
+
+.login-nav {
+    padding-top: 20px;
+}
+
+.home-img img {
+	width: 100%;
+	padding-top: 70px;
+}
+
+.home-btn {
+	padding-bottom: 20px;
+}
+
+h2, p {
+	color: #000000;
 }

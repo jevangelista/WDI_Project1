@@ -120,6 +120,8 @@ app.post(["/users", "/signup"], function signup(req, res) {
   //create the new user
   db.User.createSecure(email,password, function (err, user) {
     if (err) {console.log(err);
+    } else if (password.length < 6) {
+       res.send("Your password needs to be at least 6 characters");
     } else { 
     // login the user
     req.login(user);
@@ -127,6 +129,7 @@ app.post(["/users", "/signup"], function signup(req, res) {
     // redirect to user profile
     res.redirect("/profile"); 
   };
+
   });
 });
 
