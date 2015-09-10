@@ -157,6 +157,9 @@ app.post(["/sessions", "/login"], function login(req, res) {
   });
 });
 
+
+
+
 //gets all user data
 app.get("/api/users", function indexUsers(req, res){
     db.User.find({}, function(err, users){
@@ -182,6 +185,13 @@ app.get("/api/user/:id", function showUser(req, res){
 // <<<<<<<<<<<< API DRINK ENDPOINTS >>>>>>>>>>>>
 //========================================
 
+//where the user chooses a feeling bar --> recipe
+app.post(["/bar"], function login(req, res) {
+    console.log("From the bar to the recipe");
+    // redirect to recipe + add query params
+    res.redirect("/recipe/"); 
+});
+
 //gets all drink data
 app.get("/api/drinks", function indexDrinks(req, res){
     db.Drink.find({}, function(err, drinks){
@@ -194,11 +204,13 @@ app.get("/api/drinks", function indexDrinks(req, res){
 
 });
 
-//gets happy drinks
-app.get("/api/drink/:feeling", function feelingDrinks(req, res){
-        
+//gets individual drinks
+app.get("/api/drink", function feelingDrinks(req, res){
+    
+    var drinkFeeling = req.query.feeling; 
+    console.log("get the feeling: " + drinkFeeling);
 
-    db.Drink.findOne({feeling: "Happy"}, function(err, drinks){
+    db.Drink.findOne({feeling: drinkFeeling}, function(err, drinks){
         if (err) {
             console.log("BAD THING!");
             return res.sendStatus(400);
@@ -207,6 +219,28 @@ app.get("/api/drink/:feeling", function feelingDrinks(req, res){
     });
 
 });
+
+
+ // find the current user
+  // req.currentUser = function (cb) {
+  //   db.User.
+  //     findOne({ _id: req.session.userId },
+  //     function (err, user) {
+  //       req.user = user;
+  //       cb(null, user);
+
+  //     })
+  // };
+
+//get individual JSON with currentUser 
+// app.get("/api/user/:id", function showUser(req, res){
+//   req.currentUser(function (err, user){
+//     if (err) {return console.log(err);}
+//     res.send(user);
+
+//   })
+
+// });
 
 //search 
 

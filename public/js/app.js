@@ -18,12 +18,12 @@ $.get("/api/user/:id", function (response) {
 
 $( "#drinkButton-happy" ).click(function() {
 	console.log("happy button clicked");
-	location.href = "/recipe";
+	location.href = "/recipe?feeling=happy";
 });
 
 $( "#drinkButton-sleepy" ).click(function() {
 	console.log("sleepy button clicked");
-	location.href = "/recipe";
+	location.href = "/recipe?feeling=Sleepy";
 });
 
 $( "#drinkButton-fancy" ).click(function() {
