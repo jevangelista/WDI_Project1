@@ -5,22 +5,14 @@ $(document).ready(function(){
 //renders profile on profile page
 $.get("/api/user/:id", function (response) {
 		
-	//console log sanity checks	
-	console.log(response);
-	console.log(response._id);
-	console.log(response.email);
 	var $target_div = $("div#target");
 	$target_div.append("<p>" + response.email + "!" + "</p>");
 
 });
 
-//testing -- renders happy drinks on recipe page
+//Renders happy drinks on recipe page
 $.get("/api/drinks/happy", function (response) {
 	
-	//console log sanity checks	
-	console.log(response);
-	console.log(response[0].drinkName);
-	console.log(response[0].feeling);
 	var $target_div = $("div#target-drinks");
 	response.forEach(function (drink){
 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
@@ -28,6 +20,83 @@ $.get("/api/drinks/happy", function (response) {
 	
 
 });
+
+// //Renders sleepy drinks on recipe page
+// $.get("/api/drinks/sleepy", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
+
+// //Renders fancy drinks on recipe page
+// $.get("/api/drinks/fancy", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
+
+// //Renders adventurous drinks on recipe page
+// $.get("/api/drinks/adventurous", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
+
+// //Renders romantic drinks on recipe page
+// $.get("/api/drinks/romantic", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
+
+// //Renders zany drinks on recipe page
+// $.get("/api/drinks/zany", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
+
+// //Renders relaxed drinks on recipe page
+// $.get("/api/drinks/relaxed", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
+
+// //Renders pensive drinks on recipe page
+// $.get("/api/drinks/pensive", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
 
 
 });

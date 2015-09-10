@@ -113,7 +113,7 @@ app.get("/recipe", function (req, res) {
   res.sendFile(path.join(views, "recipe.html"));
 });
 
-// <<<<<<<<<<<< API ENDPOINTS >>>>>>>>>>>>
+// <<<<<<<<<<<< API USER ENDPOINTS >>>>>>>>>>>>
 //========================================
 
 //where the user submits the sign-up form
@@ -179,6 +179,8 @@ app.get("/api/user/:id", function showUser(req, res){
 
 });
 
+// <<<<<<<<<<<< API DRINK ENDPOINTS >>>>>>>>>>>>
+//========================================
 
 //gets all drink data
 app.get("/api/drinks", function indexDrinks(req, res){
@@ -192,7 +194,7 @@ app.get("/api/drinks", function indexDrinks(req, res){
 
 });
 
-//testing find on particular drinks
+//gets happy drinks
 app.get("/api/drinks/happy", function feelingDrinks(req, res){
     db.Drink.find({feeling: "Happy"}, function(err, drinks){
         if (err) {
@@ -203,6 +205,92 @@ app.get("/api/drinks/happy", function feelingDrinks(req, res){
     });
 
 });
+
+//gets sleepy drinks
+app.get("/api/drinks/sleepy", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Sleepy"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+//gets fancy drinks
+app.get("/api/drinks/fancy", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Fancy"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+//gets adventurous drinks
+app.get("/api/drinks/adventurous", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Adventurous"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+//gets romantic drinks
+app.get("/api/drinks/romantic", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Romantic"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+//gets zany drinks
+app.get("/api/drinks/zany", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Zany"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+//gets relaxed drinks
+app.get("/api/drinks/relaxed", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Zany"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+//gets pensive drinks
+app.get("/api/drinks/pensive", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Pensive"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+
 
 
 
