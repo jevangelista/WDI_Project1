@@ -51,8 +51,21 @@
 </nav>
 <!-- End Header and login -->
 
- <h1>Hello! </h1>
+ <h1>Hello </h1>
+ <div id="target"> </div>
 
+      <!-- Take Quiz Button -->
+    <div>
+     <button type="button" class="btn btn-default" id="barButton" action="/bar">Make a new drink</button>
+     <script type="text/javascript">
+        document.getElementById("barButton").onclick = function () {
+            location.href = "/bar";
+        };
+    </script>
+    </div>
+
+
+<br/><br/>
      <!-- Logout Button -->
     <div>
      <button type="button" class="btn btn-default" id="logOutButton" action="/logout">Log Out</button>
@@ -63,22 +76,10 @@
     </script>
     </div>
 
-    <div id="target">
-
-
-    </div>
+    
     	
     <br/><br/>
 
-     <!-- Take Quiz Button -->
-    <div>
-     <button type="button" class="btn btn-default" id="barButton" action="/bar">Make a new drink</button>
-     <script type="text/javascript">
-        document.getElementById("barButton").onclick = function () {
-            location.href = "/bar";
-        };
-    </script>
-    </div>
 
 </body>
 

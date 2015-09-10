@@ -6,7 +6,7 @@ bcrypt = require('bcrypt');
 var UserSchema = new Schema({
 	email: {type: String, required: true},
 	passwordDigest: {type: String, required: true},
-	createdAt: {type: Date, default: Date.now()}
+	createdAt: {type: Date, default: Date.now()},
 });
 
 // create a new user with secure (hashed) password (for sign up)

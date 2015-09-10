@@ -93,10 +93,6 @@ app.get("/logout", function (req, res) {
 // show the current user/profile route
 app.get("/profile/", function userShow(req, res) {
   req.currentUser(function (err, user) {
-
-    console.log("Hey look! this is " + user);
-    console.log("Hey this is their session id: " + req.session.userId)
-
     if (err || user === null) {
       return console.log(err);
     } else {

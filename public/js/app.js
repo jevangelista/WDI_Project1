@@ -9,7 +9,7 @@ $.get("/api/user/:id", function (res) {
 	console.log(res._id);
 	console.log(res.email);
 	var $target_div = $("div#target");
-	$target_div.append("<p>" + res.email + "</p>");
+	$target_div.append("<p>" + res.email + "!" + "</p>");
 
 });
 
