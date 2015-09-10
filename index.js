@@ -12,6 +12,8 @@ var express = require('express'),
   db = require("./models"),
   //requires express-session
   session = require("express-session");
+  //requires json
+  json = require('express-json');
 
 // <<<<<<<<<<<<<< CONFIG >>>>>>>>>>>>>>>>>
 //========================================
