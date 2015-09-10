@@ -29,10 +29,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "postinstall": "bower install"   // <---- only need this line if you're using Bower
-   }, 
-  "engines": {
-      "node": "0.10.x",
-      "npm": "1.2.x"
-    }
+    "postinstall": "bower install"
+   }
 }
