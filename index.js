@@ -178,6 +178,19 @@ app.get("/api/user/:id", function showUser(req, res){
 });
 
 
+//gets all drink data
+app.get("/api/drinks", function indexDrinks(req, res){
+    db.Drink.find({}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
+
 
 // <<<<<<<<<<<< SPECIFYING PORT >>>>>>>>>>>>
 //========================================

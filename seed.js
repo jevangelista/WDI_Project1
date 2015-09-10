@@ -3,6 +3,7 @@
 
 var db = require("./models");
 
+//user seed data;
 var users_list =[
 	{
 		_id: "55e76cc4ed7b8c9e09924daa",
@@ -34,11 +35,55 @@ var users_list =[
 	},
 ];
 
+var drinks_list = [
+	{
+		drinkName: "Old Fashioned",
+		image: "http://liquor.s3.amazonaws.com/wp-content/uploads/2010/08/c-and-b-old-fashioned1.jpg",
+		feeling: "pensive",
+		ingredients: ["whisky", "bitters", "orange"],
+		instructions: "stir it all up!"
+	},
+	{
+		drinkName: "Hot Toddy",
+		image: "http://cdn.shape.com/sites/shape.com/files/styles/586xany/public/hot-toddy-700.jpg?itok=EMNO0ShQ",
+		feeling: "sleepy",
+		ingredients: ["lemon", "hot water", "whisky"],
+		instructions: "heat it all up!"
+	},
+		{
+		drinkName: "Mimosa",
+		image: "http://www.bevdig.com/uploads/2/6/7/4/26740497/5550639_orig.jpg",
+		feeling: "romantic",
+		ingredients: ["orange juice", "champagne", "ice"],
+		instructions: "mix it all up!"
+	}
+]
+
+// //Drink Schema
+// var DrinkSchema = new Schema {(
+//     drinkName: {type: String, required: true},
+//     image: {type: String, required: true},
+//     feeling: {type: String, required: true},
+//     ingredients: {type: Array, default: Date.now()},
+//     instructions: {type: String, required: true}
+//   )};
+
+
 db.User.remove({}, function(err, users){
 
   db.User.create(users_list, function(err, users){
     if (err) { return console.log(err) };
     console.log("created", users.length, "users")
+    process.exit();
+  })
+
+});
+
+db.Drink.remove({}, function(err, users){
+
+  db.Drink.create(drinks_list, function(err, drinks){
+    if (err) { return console.log(err) };
+    console.log("created", drinks.length, "drinks")
     process.exit();
   })
 

@@ -2,11 +2,21 @@ var mongoose = require('mongoose'),
 Schema = mongoose.Schema,
 bcrypt = require('bcrypt');
 
+//Drink Schema
+var DrinkSchema = new Schema ({
+    drinkName: {type: String, required: true},
+    image: {type: String, required: true},
+    feeling: {type: String, required: true},
+    ingredients: {type: Array, default: Date.now()},
+    instructions: {type: String, required: true}
+  });
+
 //User Schema
 var UserSchema = new Schema({
 	email: {type: String, required: true},
 	passwordDigest: {type: String, required: true},
 	createdAt: {type: Date, default: Date.now()},
+  drinks: [DrinkSchema]
 });
 
 // create a new user with secure (hashed) password (for sign up)
@@ -59,6 +69,8 @@ UserSchema.methods.checkPassword = function (password) {
 
 //define user model
 var User = mongoose.model('User', UserSchema);
+var Drink = mongoose.model('Drink', DrinkSchema);
 
 //export user model
-module.exports = User;
+module.exports.user = User;
+module.exports.drink = Drink;
