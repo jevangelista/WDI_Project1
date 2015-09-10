@@ -110,6 +110,8 @@ app.get("/bar", function (req, res) {
 
 //recipe route
 app.get("/recipe", function (req, res) {
+
+  
   res.sendFile(path.join(views, "recipe.html"));
 });
 

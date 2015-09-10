@@ -16,14 +16,37 @@ $.get("/api/user/:id", function (response) {
 // <<<<<<<<<<< Bar Page  >>>>>>>>>>>>>>
 //========================================
 
-$( "#drinkButton-happy" ).click(function() {
-	console.log("happy button clicked");
-	location.href = "/recipe?feeling=happy";
+//renders drink on recipe page
+$.get("/api/drink?feeling=pensive", function (response) {
+	
+// $( "#drinkButton-happy" ).click(function() {
+// 	console.log("happy button clicked");
+// 	// location.href = "/recipe";
+// });
+	
+	console.log("hitting bar/recipe page");
+	console.log(response);	
+	console.log(response[0]);	
+	
+
+	var drinkTemplate = _.template($("#drinksTemplate").html());
+	var drinkHtml = drinkTemplate(response);
+	var $target_div = $("div#target-drinks");
+	$target_div.append(drinkHtml);
+
+
+
+
 });
+
+//next step --> get global variable to render on recipe page
+
+
+
 
 $( "#drinkButton-sleepy" ).click(function() {
 	console.log("sleepy button clicked");
-	location.href = "/recipe?feeling=Sleepy";
+	location.href = "/recipe";
 });
 
 $( "#drinkButton-fancy" ).click(function() {
