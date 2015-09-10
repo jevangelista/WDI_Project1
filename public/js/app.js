@@ -2,16 +2,33 @@
 $(document).ready(function(){
 
 
-
-$.get("/api/user/:id", function (res) {
+//renders profile on profile page
+$.get("/api/user/:id", function (response) {
 		
-	console.log(res);
-	console.log(res._id);
-	console.log(res.email);
+	//console log sanity checks	
+	console.log(response);
+	console.log(response._id);
+	console.log(response.email);
 	var $target_div = $("div#target");
-	$target_div.append("<p>" + res.email + "!" + "</p>");
+	$target_div.append("<p>" + response.email + "!" + "</p>");
 
 });
+
+//testing -- renders happy drinks on recipe page
+$.get("/api/drinks/happy", function (response) {
+	
+	//console log sanity checks	
+	console.log(response);
+	console.log(response[0].drinkName);
+	console.log(response[0].feeling);
+	var $target_div = $("div#target-drinks");
+	response.forEach(function (drink){
+		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+	})
+	
+
+});
+
 
 });
 

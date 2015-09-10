@@ -169,7 +169,7 @@ app.get("/api/users", function indexUsers(req, res){
 
 });
 
-//trying to get individual JSON with currentUser 
+//get individual JSON with currentUser 
 app.get("/api/user/:id", function showUser(req, res){
   req.currentUser(function(err,user){
     if (err) {return console.log(err);}
@@ -191,6 +191,19 @@ app.get("/api/drinks", function indexDrinks(req, res){
     });
 
 });
+
+//testing find on particular drinks
+app.get("/api/drinks/happy", function feelingDrinks(req, res){
+    db.Drink.find({feeling: "Happy"}, function(err, drinks){
+        if (err) {
+            console.log("BAD THING!");
+            return res.sendStatus(400);
+        }
+        res.send(drinks);
+    });
+
+});
+
 
 
 
