@@ -2,6 +2,9 @@
 $(document).ready(function(){
 
 
+// <<<<<<<<<<< Profile Page  >>>>>>>>>>>>>>
+//========================================
+
 //renders profile on profile page
 $.get("/api/user/:id", function (response) {
 		
@@ -9,6 +12,9 @@ $.get("/api/user/:id", function (response) {
 	$target_div.append("<p>" + response.email + "!" + "</p>");
 
 });
+
+// <<<<<<<<<<< Bar Page  >>>>>>>>>>>>>>
+//========================================
 
 $( "#drinkButton-happy" ).click(function() {
 	console.log("happy button clicked");
@@ -61,86 +67,6 @@ $( "#drinkButton-pensive" ).click(function() {
 	
 
 // });
-
-// //Renders sleepy drinks on recipe page
-// $.get("/api/drinks/sleepy", function (response) {
-	
-// 	var $target_div = $("div#target-drinks");
-// 	response.forEach(function (drink){
-// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-// 	})
-	
-
-// });
-
-// //Renders fancy drinks on recipe page
-// $.get("/api/drinks/fancy", function (response) {
-	
-// 	var $target_div = $("div#target-drinks");
-// 	response.forEach(function (drink){
-// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-// 	})
-	
-
-// });
-
-// //Renders adventurous drinks on recipe page
-// $.get("/api/drinks/adventurous", function (response) {
-	
-// 	var $target_div = $("div#target-drinks");
-// 	response.forEach(function (drink){
-// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-// 	})
-	
-
-// });
-
-// //Renders romantic drinks on recipe page
-// $.get("/api/drinks/romantic", function (response) {
-	
-// 	var $target_div = $("div#target-drinks");
-// 	response.forEach(function (drink){
-// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-// 	})
-	
-
-// });
-
-// //Renders zany drinks on recipe page
-// $.get("/api/drinks/zany", function (response) {
-	
-// 	var $target_div = $("div#target-drinks");
-// 	response.forEach(function (drink){
-// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-// 	})
-	
-
-// });
-
-// //Renders relaxed drinks on recipe page
-// $.get("/api/drinks/relaxed", function (response) {
-	
-// 	var $target_div = $("div#target-drinks");
-// 	response.forEach(function (drink){
-// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-// 	})
-	
-
-// });
-
-// //Renders pensive drinks on recipe page
-// $.get("/api/drinks/pensive", function (response) {
-	
-// 	var $target_div = $("div#target-drinks");
-// 	response.forEach(function (drink){
-// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-// 	})
-	
-
-// });
-
-
-
 
 
 
