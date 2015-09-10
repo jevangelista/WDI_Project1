@@ -10,16 +10,57 @@ $.get("/api/user/:id", function (response) {
 
 });
 
-//Renders happy drinks on recipe page
-$.get("/api/drinks/happy", function (response) {
-	
-	var $target_div = $("div#target-drinks");
-	response.forEach(function (drink){
-		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
-	})
-	
+$( "#drinkButton-happy" ).click(function() {
+	console.log("happy button clicked");
+	location.href = "/recipe";
+});
+
+$( "#drinkButton-sleepy" ).click(function() {
+	console.log("sleepy button clicked");
+	location.href = "/recipe";
+});
+
+$( "#drinkButton-fancy" ).click(function() {
+	console.log("fancy button clicked");
+	location.href = "/recipe";
+});
+
+$( "#drinkButton-adventurous" ).click(function() {
+	console.log("adventurous button clicked");
+	location.href = "/recipe";
+});
+
+$( "#drinkButton-romantic" ).click(function() {
+	console.log("romantic button clicked");
+	location.href = "/recipe";
+});
+
+$( "#drinkButton-zany" ).click(function() {
+	console.log("zany button clicked");
+	location.href = "/recipe";
+});
+
+$( "#drinkButton-relaxed" ).click(function() {
+	console.log("relaxed button clicked");
+	location.href = "/recipe";
+});
+
+$( "#drinkButton-pensive" ).click(function() {
+	console.log("pensive button clicked");
+	location.href = "/recipe";
+});
 
 });
+// //Renders happy drinks on recipe page
+// $.get("/api/drink/happy", function (response) {
+	
+// 	var $target_div = $("div#target-drinks");
+// 	response.forEach(function (drink){
+// 		$target_div.append("<p>" + drink.drinkName + "!" + "</p>");
+// 	})
+	
+
+// });
 
 // //Renders sleepy drinks on recipe page
 // $.get("/api/drinks/sleepy", function (response) {
@@ -99,7 +140,7 @@ $.get("/api/drinks/happy", function (response) {
 // });
 
 
-});
+
 
 
 
