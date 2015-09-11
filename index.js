@@ -111,6 +111,8 @@ app.get("/bar", function (req, res) {
 //recipe route
 app.get("/recipe", function (req, res) {
 
+  console.log("This req is in the recipe route" + req)
+  console.log("You are hitting this recipe route");
   
   res.sendFile(path.join(views, "recipe.html"));
 });
@@ -190,8 +192,13 @@ app.get("/api/user/:id", function showUser(req, res){
 //where the user chooses a feeling bar --> recipe
 app.post(["/bar"], function login(req, res) {
     console.log("From the bar to the recipe");
+
+    //passing the JSON object
+    console.log("Here is the req " + req )
     // redirect to recipe + add query params
-    res.redirect("/recipe/"); 
+
+
+    res.redirect("/recipe?feeling=happy"); 
 });
 
 //gets all drink data

@@ -16,31 +16,66 @@ $.get("/api/user/:id", function (response) {
 
 
 //variable for recipe feeling query parameter
-var feelingHere = "zany";
+
 
 // <<<<<<<<<<< Bar Page  >>>>>>>>>>>>>>
 //========================================
 
-//renders drink on recipe page
-$.get("/api/drink", {"feeling": feelingHere}, function (response) {
-	
-// $( "#drinkButton-happy" ).click(function() {
-// 	console.log("happy button clicked");
-// 	location.href = "/recipe";
-	console.log(response);	
-	console.log(response.drinkName);		
+// var feelingHere;
+// console.log("here is the feeling " + feelingHere);
 
-	var drinkTemplate = _.template($("#drinksTemplate").html());
-	var drinkHtml = drinkTemplate(response);
-	var $target_div = $("div#target-drinks");
-	$target_div.append(drinkHtml);
-// });
+
+$( ".drinkButton" ).click(function() {
+	// console.log($(this));
+	console.log($(this).attr('id'));
+	var feelingHere = $(this).attr('id');
+	console.log("feelings inside: " + feelingHere  )
+
+});
+
+var feelingHere = "zany"
+
+	//renders drink on recipe page
+		$.get("/api/drink", {"feeling": feelingHere}, function (response) {
+			
+		// $( "#drinkButton-happy" ).click(function() {
+		// 	console.log("happy button clicked");
+		// 	location.href = "/recipe";
+			
+			console.log(response);	
+			console.log(response.drinkName);		
+
+			var drinkTemplate = _.template($("#drinksTemplate").html());
+			var drinkHtml = drinkTemplate(response);
+			var $target_div = $("div#target-drinks");
+			$target_div.append(drinkHtml);
+		// });
+
+
+
+		});
+
+
 
 
 
 });
 
+
 //next step --> get global variable to render on recipe page
+
+// var feelingHere = "";
+// //createFeeling so that it equals query parameter
+// function createFeeling () {
+	// $( ".drinkButton" ).click(function() {
+	// 	// console.log($(this));
+	// 	console.log($(this).attr('id'));
+	// 	feelingHere = $(this).attr('id');
+
+	// });
+// };
+// createFeeling();
+
 
 
 
@@ -80,7 +115,6 @@ $( "#drinkButton-pensive" ).click(function() {
 	location.href = "/recipe";
 });
 
-});
 // //Renders happy drinks on recipe page
 // $.get("/api/drink/happy", function (response) {
 	
