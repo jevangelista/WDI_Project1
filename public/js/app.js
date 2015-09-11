@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
 
@@ -24,16 +23,28 @@ $.get("/api/user/:id", function (response) {
 // var feelingHere;
 // console.log("here is the feeling " + feelingHere);
 
+// var feelingHere = "";
+//createFeeling so that it equals query parameter
 
-$( ".drinkButton" ).click(function() {
+function createFeeling () {
+	$( ".drinkButton" ).click(function() {
+		// console.log($(this));
+		console.log($(this).attr('id'));
+		feelingHere = $(this).attr('id');
+
+	});
+};
+createFeeling();
+
+var feelingHere =  $( ".drinkButton" ).submit(function() {
 	// console.log($(this));
 	console.log($(this).attr('id'));
 	var feelingHere = $(this).attr('id');
-	console.log("feelings inside: " + feelingHere  )
+	console.log("feelings inside: " + feelingHere  );
+
 
 });
 
-var feelingHere = "zany"
 
 	//renders drink on recipe page
 		$.get("/api/drink", {"feeling": feelingHere}, function (response) {
@@ -77,43 +88,40 @@ var feelingHere = "zany"
 // createFeeling();
 
 
+// $( "#drinkButton-sleepy" ).click(function() {
+// 	console.log("sleepy button clicked");
+// 	location.href = "/recipe?feeling=sleepy";
+// });
 
+// $( "#drinkButton-fancy" ).click(function() {
+// 	console.log("fancy button clicked");
+// 	location.href = "/recipe?feeling-fancy";
+// });
 
+// $( "#drinkButton-adventurous" ).click(function() {
+// 	console.log("adventurous button clicked");
+// 	location.href = "/recipe?feeling=adventurous";
+// });
 
-$( "#drinkButton-sleepy" ).click(function() {
-	console.log("sleepy button clicked");
-	location.href = "/recipe";
-});
+// $( "#drinkButton-romantic" ).click(function() {
+// 	console.log("romantic button clicked");
+// 	location.href = "/recipe?feeling=romantic";
+// });
 
-$( "#drinkButton-fancy" ).click(function() {
-	console.log("fancy button clicked");
-	location.href = "/recipe";
-});
+// $( "#drinkButton-zany" ).click(function() {
+// 	console.log("zany button clicked");
+// 	location.href = "/recipe?feeling=zany";
+// });
 
-$( "#drinkButton-adventurous" ).click(function() {
-	console.log("adventurous button clicked");
-	location.href = "/recipe";
-});
+// $( "#drinkButton-relaxed" ).click(function() {
+// 	console.log("relaxed button clicked");
+// 	location.href = "/recipe?feeling=relaxed";
+// });
 
-$( "#drinkButton-romantic" ).click(function() {
-	console.log("romantic button clicked");
-	location.href = "/recipe";
-});
-
-$( "#drinkButton-zany" ).click(function() {
-	console.log("zany button clicked");
-	location.href = "/recipe";
-});
-
-$( "#drinkButton-relaxed" ).click(function() {
-	console.log("relaxed button clicked");
-	location.href = "/recipe";
-});
-
-$( "#drinkButton-pensive" ).click(function() {
-	console.log("pensive button clicked");
-	location.href = "/recipe";
-});
+// $( "#drinkButton-pensive" ).click(function() {
+// 	console.log("pensive button clicked");
+// 	location.href = "/recipe?feeling=pensive";
+// });
 
 // //Renders happy drinks on recipe page
 // $.get("/api/drink/happy", function (response) {
@@ -167,5 +175,3 @@ $( "#drinkButton-pensive" ).click(function() {
  //  $.get("/api/user/beau@ga.co", function (response) {
  //    render(response);
  // });
-
-

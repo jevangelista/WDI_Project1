@@ -108,13 +108,50 @@ app.get("/bar", function (req, res) {
   res.sendFile(path.join(views, "bar.html"));
 });
 
-//recipe route
+//recipe route --- *** might be an issue with this route
 app.get("/recipe", function (req, res) {
 
   console.log("This req is in the recipe route" + req)
   console.log("You are hitting this recipe route");
   
   res.sendFile(path.join(views, "recipe.html"));
+});
+
+//////separate recipe HTML's//////////
+app.get("/recipe-happy", function (req, res) {
+  res.sendFile(path.join(views, "recipe-happy.html"));
+});
+
+app.get("/recipe-adventurous", function (req, res) {
+  res.sendFile(path.join(views, "recipe-adventurous.html"));
+});
+
+app.get("/recipe-adventurous", function (req, res) {
+  res.sendFile(path.join(views, "recipe-adventurous.html"));
+});
+
+app.get("/recipe-fancy", function (req, res) {
+  res.sendFile(path.join(views, "recipe-fancy.html"));
+});
+
+app.get("/recipe-pensive", function (req, res) {
+  res.sendFile(path.join(views, "recipe-pensive.html"));
+});
+
+app.get("/recipe-relaxed", function (req, res) {
+  res.sendFile(path.join(views, "recipe-relaxed.html"));
+});
+
+app.get("/recipe-romantic", function (req, res) {
+  res.sendFile(path.join(views, "recipe-romantic.html"));
+});
+
+app.get("/recipe-sleepy", function (req, res) {
+  res.sendFile(path.join(views, "recipe-sleepy.html"));
+});
+
+app.get("/recipe-zany", function (req, res) {
+  res.sendFile(path.join(views, "recipe-zany.html"));
 });
 
 // <<<<<<<<<<<< API USER ENDPOINTS >>>>>>>>>>>>
@@ -189,16 +226,9 @@ app.get("/api/user/:id", function showUser(req, res){
 // <<<<<<<<<<<< API DRINK ENDPOINTS >>>>>>>>>>>>
 //========================================
 
-//where the user chooses a feeling bar --> recipe
+//where the user chooses a feeling bar --> recipe ***might be an issue with this route
 app.post(["/bar"], function login(req, res) {
-    console.log("From the bar to the recipe");
-
-    //passing the JSON object
-    console.log("Here is the req " + req )
-    // redirect to recipe + add query params
-
-
-    res.redirect("/recipe?feeling=happy"); 
+    res.redirect("/recipe"); 
 });
 
 //gets all drink data

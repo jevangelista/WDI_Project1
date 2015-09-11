@@ -71,3 +71,34 @@ p {
 
 
 }
+
+.drinkTable {
+
+	margin: auto;
+
+}
+
+#drinkImg {
+	float:left;
+	width:400px;
+	display: inline-block;
+}
+
+.drink-list {
+	float:right;
+	width:400px;
+	margin: auto;
+	display: inline-block;
+}
+
+.instructions {
+	background-color: gray;
+	color: black;
+
+}
+
+span#instructions {
+	color: black;
+	font-size: 20px;
+}
+
