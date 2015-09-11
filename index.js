@@ -166,20 +166,36 @@ app.post(["/users", "/signup"], function signup(req, res) {
   var email = user.email;
   var password = user.password;
   //create the new user
-  db.User.createSecure(email,password, function (err, user) {
-    if (err) {console.log(err);
-    } else if (password.length < 6) {
-       res.send("Your password needs to be at least 6 characters");
-    } else { 
-    // login the user
-    req.login(user);
-    console.log("User is logged in");
-    // redirect to user profile
-    res.redirect("/profile"); 
+
+  //password validation 
+  if (password.length < 6) {
+   res.send("Your password needs to be at least 6 characters long!");
   };
 
+  //email validation
+  db.User.find({email: email}, function (err, found ){
+    if (found.length > 0) {
+      res.send("This email aleady exists!")
+    } else{
+          db.User.createSecure(email,password, function (err, user) {
+          if (err) {console.log(err);
+          } else { 
+          // login the user
+          req.login(user);
+          console.log("User is logged in");
+          // redirect to user profile
+          res.redirect("/profile"); 
+        };
+
+        });
+
+    };
   });
+
+
 });
+
+
 
 // where the user submits the login form
 app.post(["/sessions", "/login"], function login(req, res) {
