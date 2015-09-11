@@ -39,36 +39,36 @@ correct contents.
 // var feelingHere = "";
 //createFeeling so that it equals query parameter
 
-var feelingHere =  $( ".drinkButton" ).submit(function() {
-	// console.log($(this));
-	console.log($(this).attr('id'));
-	var feelingHere = $(this).attr('id');
-	console.log("feelings inside: " + feelingHere  );
+// var feelingHere =  $( ".drinkButton" ).submit(function() {
+// 	// console.log($(this));
+// 	console.log($(this).attr('id'));
+// 	var feelingHere = $(this).attr('id');
+// 	console.log("feelings inside: " + feelingHere  );
 
 
-});
+// });
 
-var feelingHere = "zany";
+// var feelingHere = "zany";
 
-	//renders drink on recipe page
-		$.get("/api/drink", {"feeling": feelingHere}, function (response) {
+// 	//renders drink on recipe page
+// 		$.get("/api/drink", {"feeling": feelingHere}, function (response) {
 			
-		// $( "#drinkButton-happy" ).click(function() {
-		// 	console.log("happy button clicked");
-		// 	location.href = "/recipe";
+// 		// $( "#drinkButton-happy" ).click(function() {
+// 		// 	console.log("happy button clicked");
+// 		// 	location.href = "/recipe";
 			
-			console.log(response);	
-			console.log(response.drinkName);		
+// 			console.log(response);	
+// 			console.log(response.drinkName);		
 
-			var drinkTemplate = _.template($("#drinksTemplate").html());
-			var drinkHtml = drinkTemplate(response);
-			var $target_div = $("div#target-drinks");
-			$target_div.append(drinkHtml);
-		// });
+// 			var drinkTemplate = _.template($("#drinksTemplate").html());
+// 			var drinkHtml = drinkTemplate(response);
+// 			var $target_div = $("div#target-drinks");
+// 			$target_div.append(drinkHtml);
+// 		// });
 
 
 
-		});
+// 		});
 
 
 

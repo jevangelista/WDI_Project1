@@ -8,6 +8,7 @@ Bartende.Me is an interactive cocktail web app that serves up drink recommendati
 * Users can register and login
 * Logged in users will see a personal profile page, which includes saved drink information
 * Users can view drink recipes based on how they're feeling 
+* User can navigate to different pages with navbar.
 
 
 ### Technologies Used
