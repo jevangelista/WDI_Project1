@@ -7,31 +7,109 @@ var db = require("./models");
 var users_list =[
 	{
 		_id: "55e76cc4ed7b8c9e09924daa",
+		name: "Jamie",
 		email: "jamie@ga.co",
 		passwordDigest: "$2a$10$9Hmt9l2iOZgNLi4C/GeoOeyMDRd.OUrFBz.s0NpvXJHVv.dY2I8N6",
 		__v: 0,
-		createdAt: "2015-09-02T21:40:20.969Z"
+		createdAt: "2015-09-02T21:40:20.969Z",
+		drinks: [
+					{
+						drinkName: "Moscow Mule",
+						image: "http://i.share.pho.to/376a7204_o.png",
+						feeling: "relaxed",
+						ingredients: ["2 oz Vodka", "3 oz Ginger beer", "Juice from half a lime", "1 Lime wheel"],
+						instructions: "Add all the ingredients to a Moscow Mule mug or highball glass filled with ice and garnish with a lime wheel."
+					},
+						{
+							drinkName: "Bloody Mary",
+							image: "http://i.share.pho.to/b713b753_o.png",
+							feeling: "zany",
+							ingredients: [ "1 Lemon wedge", "1 Lime wedge" ,"2 oz Premium Vodka", "4 oz Tomato juice", "2 dashes Tabasco Sauce", "2 tsp Prepared horseradish", "2 tsp Worcesthershire sauce", "1 pinch celery salt", "1 pinch Ground black pepper", "1 pinch Smoked Paprika", "1 Celery stick"],
+							instructions: "Pour some celery salt onto a small plate. Rub the juicy side of the lemon or lime wedge along the lip of a pint glass. Roll the outer edge of the glass in celery salt until fully coated. Fill with ice and set aside. Squeeze the lemon and lime wedges into a shaker and drop them in. Add the remaining ingredients and fill with ice. Shake gently and strain into the prepared glass. Garnish with a celery stalk and a lime wedge."
+							
+
+						}
+				]
 	},
 	{
 		_id: "55e7ea2f6c03afc5262a0a6e",
+		name: "Beau",
 		email: "beau@ga.co",
 		passwordDigest: "$2a$10$Zt5pZLXNH7ajTaKOZ2GUL.6zffwXbzEXADAVh0swvRwncH1G8MZjS",
 		__v: 0,
-		createdAt: "2015-09-03T06:35:27.974Z"
+		createdAt: "2015-09-03T06:35:27.974Z",
+		drinks: [
+					{
+						drinkName: "Moscow Mule",
+						image: "http://i.share.pho.to/376a7204_o.png",
+						feeling: "relaxed",
+						ingredients: ["2 oz Vodka", "3 oz Ginger beer", "Juice from half a lime", "1 Lime wheel"],
+						instructions: "Add all the ingredients to a Moscow Mule mug or highball glass filled with ice and garnish with a lime wheel."
+					},
+					{
+						drinkName: "Bloody Mary",
+						image: "http://i.share.pho.to/b713b753_o.png",
+						feeling: "zany",
+						ingredients: [ "1 Lemon wedge", "1 Lime wedge" ,"2 oz Premium Vodka", "4 oz Tomato juice", "2 dashes Tabasco Sauce", "2 tsp Prepared horseradish", "2 tsp Worcesthershire sauce", "1 pinch celery salt", "1 pinch Ground black pepper", "1 pinch Smoked Paprika", "1 Celery stick"],
+						instructions: "Pour some celery salt onto a small plate. Rub the juicy side of the lemon or lime wedge along the lip of a pint glass. Roll the outer edge of the glass in celery salt until fully coated. Fill with ice and set aside. Squeeze the lemon and lime wedges into a shaker and drop them in. Add the remaining ingredients and fill with ice. Shake gently and strain into the prepared glass. Garnish with a celery stalk and a lime wedge."
+						
+
+					}
+		]
 	},
 	{
 		_id: "55ef2d2c483f5cf4208e86f0",
+		name: "John",
 		email: "john@ga.co",
 		passwordDigest: "$2a$10$72qIfb.XbmZAvEpC59RbOuaUULbbuSCyeFBuBdawdBwJbGYUREXrm",
 		__v: 0,
-		createdAt: "2015-09-08T18:44:51.361Z"
+		createdAt: "2015-09-08T18:44:51.361Z",
+		drinks: [
+					{
+						drinkName: "Moscow Mule",
+						image: "http://i.share.pho.to/376a7204_o.png",
+						feeling: "relaxed",
+						ingredients: ["2 oz Vodka", "3 oz Ginger beer", "Juice from half a lime", "1 Lime wheel"],
+						instructions: "Add all the ingredients to a Moscow Mule mug or highball glass filled with ice and garnish with a lime wheel."
+					},
+					{
+						drinkName: "Bloody Mary",
+						image: "http://i.share.pho.to/b713b753_o.png",
+						feeling: "zany",
+						ingredients: [ "1 Lemon wedge", "1 Lime wedge" ,"2 oz Premium Vodka", "4 oz Tomato juice", "2 dashes Tabasco Sauce", "2 tsp Prepared horseradish", "2 tsp Worcesthershire sauce", "1 pinch celery salt", "1 pinch Ground black pepper", "1 pinch Smoked Paprika", "1 Celery stick"],
+						instructions: "Pour some celery salt onto a small plate. Rub the juicy side of the lemon or lime wedge along the lip of a pint glass. Roll the outer edge of the glass in celery salt until fully coated. Fill with ice and set aside. Squeeze the lemon and lime wedges into a shaker and drop them in. Add the remaining ingredients and fill with ice. Shake gently and strain into the prepared glass. Garnish with a celery stalk and a lime wedge."
+						
+
+					}
+
+		]
 	},
 	{
 		_id: "55ed39c463846a3e120eb890",
+		name: "Alice",
 		email: "alice@ga.co",
 		passwordDigest: "$2a$10$v/DALsucCd/rjlmiB5AJwOMK898oNBdqUpS2l/i9hFkqWfssQoXCO",
 		__v: 0,
-		createdAt: "2015-09-07T07:16:03.911Z"
+		createdAt: "2015-09-07T07:16:03.911Z",
+		drinks: [
+					{
+						drinkName: "Moscow Mule",
+						image: "http://i.share.pho.to/376a7204_o.png",
+						feeling: "relaxed",
+						ingredients: ["2 oz Vodka", "3 oz Ginger beer", "Juice from half a lime", "1 Lime wheel"],
+						instructions: "Add all the ingredients to a Moscow Mule mug or highball glass filled with ice and garnish with a lime wheel."
+					},
+					{
+						drinkName: "Bloody Mary",
+						image: "http://i.share.pho.to/b713b753_o.png",
+						feeling: "zany",
+						ingredients: [ "1 Lemon wedge", "1 Lime wedge" ,"2 oz Premium Vodka", "4 oz Tomato juice", "2 dashes Tabasco Sauce", "2 tsp Prepared horseradish", "2 tsp Worcesthershire sauce", "1 pinch celery salt", "1 pinch Ground black pepper", "1 pinch Smoked Paprika", "1 Celery stick"],
+						instructions: "Pour some celery salt onto a small plate. Rub the juicy side of the lemon or lime wedge along the lip of a pint glass. Roll the outer edge of the glass in celery salt until fully coated. Fill with ice and set aside. Squeeze the lemon and lime wedges into a shaker and drop them in. Add the remaining ingredients and fill with ice. Shake gently and strain into the prepared glass. Garnish with a celery stalk and a lime wedge."
+						
+
+					}
+
+		]
 	},
 ];
 

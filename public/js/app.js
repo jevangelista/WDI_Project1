@@ -4,13 +4,23 @@ $(document).ready(function(){
 // <<<<<<<<<<< Profile Page  >>>>>>>>>>>>>>
 //========================================
 
-//renders profile on profile page
+//renders user info on profile page
 $.get("/api/user/:id", function (response) {
-		
-	var $target_div = $("div#target");
-	$target_div.append("<p>" + response.email + "!" + "</p>");
+	
+	console.log("Here is the response in app: " + response);
+	console.log(response.email);
+	console.log("Here are your drinks" + response.drinks);
+	console.log("Here is 1 drink" + response.drinks[0].drinkName);
+
+
+	var userTemplate = _.template($("#userTemplate").html());
+	var userHtml = userTemplate(response);
+	var $target_div = $("div#target-user");
+	$target_div.append(userHtml);
 
 });
+
+
 
 
 

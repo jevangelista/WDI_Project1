@@ -35,10 +35,10 @@
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><button type="button" class="btn glyphicon glyphicon-glass"></button></a>
                           <ul class="dropdown-menu">
-                            <li><a href="signup">Sign Up</a></li>
-                            <li><a href="login">Login</a></li>
-                            <li><a href="profile">Profile</a></li>
-                            <li><a href="logout">Logout</a></li>
+                            <li><a href="/signup">Sign Up</a></li>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="/logout">Logout</a></li>
                           </ul>
                         </li>
                         </div>
@@ -52,9 +52,27 @@
 </nav>
 <!-- End Header and login -->
 
- <h1>Hello </h1>
- <div id="target"> </div>
+  <div id="target-user"> </div>
 
+ <script type="text/template" id="userTemplate">
+ <h1> Welcome, <%= name %> ! </h1>
+ <br/>
+<h2>Here are your drinks: </h2>
+
+<p>
+  <%= drinks[0].drinkName %> 
+  <img width=200 src = <%= drinks[0].image %> >
+  <a href="/recipe-relaxed">Link to recipe</a>
+</p>
+
+<p>
+  <%= drinks[1].drinkName %> 
+  <img width=200 src = <%= drinks[1].image %> >
+  <a href="/recipe-zany">Link to recipe</a>
+</p>
+ </script>
+
+<br/><br/><br/>
       <!-- Take Quiz Button -->
     <div>
      <button type="button" class="btn btn-default" id="barButton" action="/bar">Make a new drink</button>

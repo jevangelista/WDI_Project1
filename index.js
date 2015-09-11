@@ -233,6 +233,7 @@ app.get("/api/users", function indexUsers(req, res){
 app.get("/api/user/:id", function showUser(req, res){
   req.currentUser(function (err, user){
     if (err) {return console.log(err);}
+    console.log("Here is the current user: " + user);
     res.send(user);
 
   })
