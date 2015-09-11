@@ -7,7 +7,6 @@ var db = require("./models");
 var users_list =[
 	{
 		_id: "55e76cc4ed7b8c9e09924daa",
-		name: "Jamie",
 		email: "jamie@ga.co",
 		passwordDigest: "$2a$10$9Hmt9l2iOZgNLi4C/GeoOeyMDRd.OUrFBz.s0NpvXJHVv.dY2I8N6",
 		__v: 0,
@@ -33,7 +32,6 @@ var users_list =[
 	},
 	{
 		_id: "55e7ea2f6c03afc5262a0a6e",
-		name: "Beau",
 		email: "beau@ga.co",
 		passwordDigest: "$2a$10$Zt5pZLXNH7ajTaKOZ2GUL.6zffwXbzEXADAVh0swvRwncH1G8MZjS",
 		__v: 0,
@@ -59,7 +57,6 @@ var users_list =[
 	},
 	{
 		_id: "55ef2d2c483f5cf4208e86f0",
-		name: "John",
 		email: "john@ga.co",
 		passwordDigest: "$2a$10$72qIfb.XbmZAvEpC59RbOuaUULbbuSCyeFBuBdawdBwJbGYUREXrm",
 		__v: 0,
@@ -86,7 +83,6 @@ var users_list =[
 	},
 	{
 		_id: "55ed39c463846a3e120eb890",
-		name: "Alice",
 		email: "alice@ga.co",
 		passwordDigest: "$2a$10$v/DALsucCd/rjlmiB5AJwOMK898oNBdqUpS2l/i9hFkqWfssQoXCO",
 		__v: 0,
