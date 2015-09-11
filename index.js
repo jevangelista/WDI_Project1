@@ -273,5 +273,3 @@ app.get("/api/drink", function feelingDrinks(req, res){
 var listener = app.listen(process.env.PORT || 3000, function() {
   console.log("Listening on port "+ listener.address().port);
 });
-
-

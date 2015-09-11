@@ -13,27 +13,28 @@ $.get("/api/user/:id", function (response) {
 
 });
 
+
+
+//variable for recipe feeling query parameter
+var feelingHere = "zany";
+
 // <<<<<<<<<<< Bar Page  >>>>>>>>>>>>>>
 //========================================
 
 //renders drink on recipe page
-$.get("/api/drink?feeling=pensive", function (response) {
+$.get("/api/drink", {"feeling": feelingHere}, function (response) {
 	
 // $( "#drinkButton-happy" ).click(function() {
 // 	console.log("happy button clicked");
-// 	// location.href = "/recipe";
-// });
-	
-	console.log("hitting bar/recipe page");
+// 	location.href = "/recipe";
 	console.log(response);	
-	console.log(response[0]);	
-	
+	console.log(response.drinkName);		
 
 	var drinkTemplate = _.template($("#drinksTemplate").html());
 	var drinkHtml = drinkTemplate(response);
 	var $target_div = $("div#target-drinks");
 	$target_div.append(drinkHtml);
-
+// });
 
 
 
