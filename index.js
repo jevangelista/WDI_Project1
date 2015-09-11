@@ -243,7 +243,7 @@ app.get("/api/user/:id", function showUser(req, res){
 // <<<<<<<<<<<< API DRINK ENDPOINTS >>>>>>>>>>>>
 //========================================
 
-//where the user chooses a feeling bar --> recipe ***might be an issue with this route
+//where the user chooses a feeling bar --> recipe *** might be an issue with this route
 app.post(["/bar"], function login(req, res) {
     res.redirect("/recipe"); 
 });
@@ -275,43 +275,6 @@ app.get("/api/drink", function feelingDrinks(req, res){
     });
 
 });
-
-
- // find the current user
-  // req.currentUser = function (cb) {
-  //   db.User.
-  //     findOne({ _id: req.session.userId },
-  //     function (err, user) {
-  //       req.user = user;
-  //       cb(null, user);
-
-  //     })
-  // };
-
-//get individual JSON with currentUser 
-// app.get("/api/user/:id", function showUser(req, res){
-//   req.currentUser(function (err, user){
-//     if (err) {return console.log(err);}
-//     res.send(user);
-
-//   })
-
-// });
-
-//search 
-
-// //gets sleepy drinks
-// app.get("/api/drinks/sleepy", function feelingDrinks(req, res){
-//     db.Drink.find({feeling: "Sleepy"}, function(err, drinks){
-//         if (err) {
-//             console.log("BAD THING!");
-//             return res.sendStatus(400);
-//         }
-//         res.send(drinks);
-//     });
-
-// });
-
 
 
 
