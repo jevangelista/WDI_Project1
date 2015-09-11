@@ -175,7 +175,7 @@ app.post(["/users", "/signup"], function signup(req, res) {
   //email validation
   db.User.find({email: email}, function (err, found ){
     if (found.length > 0) {
-      res.send("This email aleady exists!")
+      res.send("This email aleady exists! Enter a new one.")
     } else{
           db.User.createSecure(email,password, function (err, user) {
           if (err) {console.log(err);
