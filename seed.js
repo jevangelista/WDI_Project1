@@ -4,6 +4,8 @@
 var db = require("./models");
 
 //user seed data;
+
+// it: aaaahhh, do not hardcode `_id`, `passwordDigest`, or `createdAt` they should all be dynamic!
 var users_list =[
 	{
 		_id: "55e76cc4ed7b8c9e09924daa",
