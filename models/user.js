@@ -14,7 +14,7 @@ var DrinkSchema = new Schema ({
 //User Schema
 var UserSchema = new Schema({
 	email: {type: String, required: true},
-	passwordDigest: {type: String, required: true},
+	passwordDigest: {type: String},
 	createdAt: {type: Date, default: Date.now()},
   drinks: [DrinkSchema]
 });
