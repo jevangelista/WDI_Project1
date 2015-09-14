@@ -12,7 +12,7 @@ Bartende.Me is an interactive cocktail web app that serves up drink recommendati
 
 
 ### Technologies Used
-MongoDB, Node.js, Mongoose.js, Express.js, Twit, Express-session, Bcrypt, jQuery, HTML, CSS.
+MongoDB, Node.js, Mongoose.js, Express.js, Express-session, Bcrypt, jQuery, HTML, CSS.
 
  
 ###Planned features
