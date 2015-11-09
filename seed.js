@@ -12,14 +12,14 @@ var users_list =[
 		drinks: [
 					{
 						drinkName: "Moscow Mule",
-						image: "http://i.share.pho.to/376a7204_o.png",
+						image: "/static/images/drinks-20-relaxed-moscow-mule.png",
 						feeling: "relaxed",
 						ingredients: ["2 oz Vodka", "3 oz Ginger beer", "Juice from half a lime", "1 Lime wheel"],
 						instructions: "Add all the ingredients to a Moscow Mule mug or highball glass filled with ice and garnish with a lime wheel."
 					},
 						{
 							drinkName: "Bloody Mary",
-							image: "http://i.share.pho.to/b713b753_o.png",
+							image: "/static/images/drinks-10-zany-bloody-mary.png",
 							feeling: "zany",
 							ingredients: [ "1 Lemon wedge", "1 Lime wedge" ,"2 oz Premium Vodka", "4 oz Tomato juice", "2 dashes Tabasco Sauce", "2 tsp Prepared horseradish", "2 tsp Worcesthershire sauce", "1 pinch celery salt", "1 pinch Ground black pepper", "1 pinch Smoked Paprika", "1 Celery stick"],
 							instructions: "Pour some celery salt onto a small plate. Rub the juicy side of the lemon or lime wedge along the lip of a pint glass. Roll the outer edge of the glass in celery salt until fully coated. Fill with ice and set aside. Squeeze the lemon and lime wedges into a shaker and drop them in. Add the remaining ingredients and fill with ice. Shake gently and strain into the prepared glass. Garnish with a celery stalk and a lime wedge."
@@ -79,14 +79,14 @@ var users_list =[
 		drinks: [
 					{
 						drinkName: "Moscow Mule",
-						image: "http://i.share.pho.to/376a7204_o.png",
+						image: "static/images/drinks-20-relaxed-moscow-mule.png",
 						feeling: "relaxed",
 						ingredients: ["2 oz Vodka", "3 oz Ginger beer", "Juice from half a lime", "1 Lime wheel"],
 						instructions: "Add all the ingredients to a Moscow Mule mug or highball glass filled with ice and garnish with a lime wheel."
 					},
 					{
 						drinkName: "Bloody Mary",
-						image: "http://i.share.pho.to/b713b753_o.png",
+						image: "static/images/drinks-10-zany-bloody-mary.png",
 						feeling: "zany",
 						ingredients: [ "1 Lemon wedge", "1 Lime wedge" ,"2 oz Premium Vodka", "4 oz Tomato juice", "2 dashes Tabasco Sauce", "2 tsp Prepared horseradish", "2 tsp Worcesthershire sauce", "1 pinch celery salt", "1 pinch Ground black pepper", "1 pinch Smoked Paprika", "1 Celery stick"],
 						instructions: "Pour some celery salt onto a small plate. Rub the juicy side of the lemon or lime wedge along the lip of a pint glass. Roll the outer edge of the glass in celery salt until fully coated. Fill with ice and set aside. Squeeze the lemon and lime wedges into a shaker and drop them in. Add the remaining ingredients and fill with ice. Shake gently and strain into the prepared glass. Garnish with a celery stalk and a lime wedge."
